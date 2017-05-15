@@ -298,6 +298,18 @@ func (e *Exporter) Describe(ch chan<- *prometheus.Desc) {
 		vec.Describe(ch)
 	}
 
+	ch <- clusterHealthActivePrimaryShardsDesc
+	ch <- clusterHealthActiveShardsDesc
+	ch <- clusterHealthDelayedUnassignedShardsDesc
+	ch <- clusterHealthInitializingShardsDesc
+	ch <- clusterHealthNumberOfDataNodesDesc
+	ch <- clusterHealthNumberOfInFlightFetchDesc
+	ch <- clusterHealthNumberOfNodesDesc
+	ch <- clusterHealthNumberOfPendingTasksDesc
+	ch <- clusterHealthRelocatingShardsDesc
+	ch <- clusterHealthStatusIsGreenDesc
+	ch <- clusterHealthTimedOutDesc
+	ch <- clusterHealthUnassignedShardsDesc
 }
 
 // Collect fetches the stats from configured elasticsearch location and
